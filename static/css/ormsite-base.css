@@ -1,0 +1,109 @@
+body {
+	font-family: "Arial", "Microsoft YaHei", "黑体", "宋体", sans-serif;
+}
+
+
+.header {
+	background-color: rgb(43, 41, 39);
+	color: white;
+	/*border-top: 5px solid rgb(247,120,37);*/
+	border-top: 5px solid rgb(40, 138, 221);
+}
+
+.navbar-default .navbar-brand {
+	color: #eee;
+}
+
+/*header右部导航*/
+/* 
+ * 通知  登陆  注销
+ * */
+.header{
+	margin-bottom: 0px;
+	border-radius: 0;
+	border-bottom: 1px solid rgb(43,31,39);
+	border-left: 1px solid rgb(43,31,39);
+	border-right: 1px solid rgb(43,31,39)
+}
+@media only screen and (min-width: 768px) {
+	.navbar-right {
+		float: right!important;
+		margin-right: 0px;
+	}
+}
+
+@media only screen and (max-width: 768px) {
+	.nav li{
+		float: left;
+	}
+	.navbar-nav {
+    	margin: 7.5px 0px;
+	}
+}
+
+.navbar-default .navbar-nav > li > a:link {
+    color: rgb(177,177,177);
+}
+.navbar-default .navbar-nav > li > a:visited {
+    color: rgb(177,177,177);
+}
+.navbar-default .navbar-nav > li > a:hover {
+    color: white;
+}
+
+
+/*END header右部导航*/
+
+
+/*导航nav-list*/
+.nav-list{
+	border-radius: 0px;
+	background-image: url(../img/nav-background.jpg) ;
+	border: 0px;
+	color: rgb(255,255,255);
+	font-weight: 700;
+	margin-bottom: 0px;
+}
+
+.nav-list .navbar-nav > li > a:link {
+    color: white;
+}
+.nav-list .navbar-nav > li > a:visited {
+    color: white;
+}
+.nav-list .navbar-nav > li > a:hover {
+    color: white;
+    background-color: rgb(43, 41, 39);
+}
+/*END 导航nav-list*/
+
+
+
+/*路径导航*/
+.path-nav{
+	border-bottom: 1px solid #d6d6d6;
+	border-radius: 0px;
+	background-color: #E5E5E5;
+	font-size: 13px;
+}
+/*/END 路径导航*/
+
+
+/*公告div*/
+.container-fluid .jumbotron {
+    border-radius: 0px;
+    padding: 15px;
+    border: 1px solid rgb(214,233,198);
+    background-color: rgb(223,240,216);
+}
+/*END 公告div*/
+
+/*footer*/
+.footer{
+	background-color: rgb(43, 41, 39);
+	color: gainsboro;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	text-align: center;
+}
+/*END footer*/
