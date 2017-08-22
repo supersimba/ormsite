@@ -1,0 +1,85 @@
+{% extends "ormapp/orm-base.html" %}
+{% block title %}
+    ormlog page
+{% endblock %}
+
+{% block ormlog-css %}
+    <link rel="stylesheet" href="/static/css/ormlogs.css" />
+{% endblock %}
+
+{% block url-path %}
+    <li>
+        <a href="/ormindex/">首页</a>
+    </li>
+    <li>
+        <a href="/orminfo/">监控列表</a>
+    </li>
+    <li>
+        日志查看
+    </li>
+{% endblock %}
+
+{% block content %}
+    <div class="col-md-12">
+       <div class="div-dbinfo">
+           {% if side_type == "1" %}
+           <span class="span-dbinfo-title">Source</span>
+           IP:<span class="span-dbinfo-ip">{{ ip }}</span>
+           目录:<span class="span-dbinfo-path">{{ path }}</span>
+{#           <span class="span-dbinfo-u">{{ u }}</span>#}
+{#           <span class="span-dbinfo-p">{{ p }}</span>#}
+       </div>
+        <div class="div-logs-btn">
+            <input type="button" class="btn-display-log" id="btn-vag-log" value="分析进程日志">
+            <input type="button" class="btn-display-log" id="btn-snd-log" value="传送进程日志">
+            <input type="button" class="btn-display-log" id="btn-chk-src-pro" value="查看进程">
+        </div>
+        <div id="div-display-log">
+
+        </div>
+        {% else %}
+            <div class="div-dbinfo">
+                <span class="span-dbinfo-title">Target</span>
+                IP:<span class="span-dbinfo-ip">{{ ip }}</span>
+                目录:<span class="span-dbinfo-path">{{ path }}</span>
+{#                                <span class="span-dbinfo-u">{{ u }}</span>#}
+{#                                <span class="span-dbinfo-p">{{ p }}</span>#}
+            </div>
+               <div class="div-logs-btn">
+                   <input type="button" class="btn-display-log" id="btn-vag-log" value="接收进程日志">
+
+                   <div class="dropdown-logs-wrap">
+                       <button class="btn-dropdown-logs">全量日志</button>
+                       <div class="dropdown-logs-menu">
+                                        <a href="#">s0</a>
+                                        <a href="#">s1</a>
+                                        <a href="#">s2</a>
+                                        <a href="#">s3</a>
+                                        <a href="#">s4</a>
+                                        <a href="#">s5</a>
+                                        <a href="#">s6</a>
+                                        <a href="#">s7</a>
+                       </div>
+                   </div>
+
+                   <div class="dropdown-logr-wrap">
+                       <button class="btn-dropdown-logr">增量日志</button>
+                       <div class="dropdown-logr-menu">
+                                        <a href="#">r0</a>
+                                        <a href="#">r1</a>
+                                        <a href="#">r2</a>
+                                        <a href="#">r3</a>
+                                        <a href="#">r4</a>
+                                        <a href="#">r5</a>
+                                        <a href="#">r6</a>
+                                        <a href="#">r7</a>
+                       </div>
+                   </div>
+                   <input type="button" class="btn-display-log" id="btn-chk-tgt-pro" value="查看进程">
+               </div>
+               <div id="div-display-log">
+                   <p class="p-display-log-header"></p>
+               </div>
+        {% endif %}
+    </div>
+{% endblock %}

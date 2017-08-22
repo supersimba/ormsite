@@ -24,7 +24,7 @@ def check_remote(sship,sshuser,sshpwd,softpath,scriptpath):
                     chk_list.append(1)
             return chk_list
     except:
-        # print 'return [-1,-1,-1]'
+        #ssh 联通失败
         return [-1,-1,-1]
     finally:
         cli.close()

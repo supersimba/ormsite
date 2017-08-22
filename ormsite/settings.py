@@ -46,8 +46,7 @@ ROOT_URLCONF = 'ormsite.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'templates')]
-        ,
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -71,8 +70,8 @@ DATABASES = {
         'ENGINE':'django.db.backends.mysql',
         'NAME':"ormdb",
         'USER':'root',
-        'PASSWORD':"simba2016",
-        'HOST':"10.200.8.106"
+        'PASSWORD':"simba2017",
+        'HOST':"127.0.0.1"
      }
 }
 

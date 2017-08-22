@@ -1,0 +1,110 @@
+{% extends "ormapp/orm-base.html" %}
+{% block title %}
+    orminfo page
+{% endblock %}
+
+{% block url-path %}
+    <li>
+        <a href="/ormindex/">首页</a>
+    </li>
+    <li>
+        <a href="#">监控列表</a>
+    </li>
+{% endblock %}
+
+{% block content %}
+    <div class="col-md-12">
+        <table class="table table-hover">
+            <thead style="background-color: rgb(239,239,239);color:rgb(123,102,102);font-family: '微软雅黑';font-weight: 200;">
+                <td></td>
+                <td>同步描述</td>
+                <td>源端IP</td>
+                <td>s-script</td>
+                <td>S状态</td>
+                <td>S动作</td>
+                <td>S端时间</td>
+                <td>备端IP</td>
+                <td>t-script</td>
+                <td>T状态</td>
+                <td>T动作</td>
+                <td>T端时间</td>
+                <td>日志</td>
+                <td></td>
+            </thead>
+            <tbody style="font-family: '微软雅黑';font-size: 12px;">
+            <!--行记录-->
+                {% for l in dblist %}
+                    <tr>
+                        <td>
+                            <a href="#" class="link-collose"><img src="/static/img/111.png"></a>
+                            <span class="span-rid" style="display: none">{{ l.rid }}</span>
+                            <span class="span-src-user" style="display: none">{{ l.src_ssh_user }}</span>
+                            <span class="span-src-pwd" style="display: none">{{ l.src_ssh_pwd }}</span>
+                            <span class="span-tgt_user" style="display: none">{{ l.tgt_ssh_user }}</span>
+                            <span class="span-tgt-pwd" style="display: none">{{ l.tgt_ssh_pwd }}</span>
+                        </td>
+                        <td>{{ l.describe }}</td>
+                        <td>
+                            {{ l.src_ip }}:{{ l.src_path }}
+                        </td>
+                        <td>
+                            {{ l.src_script_path }}
+                        </td>
+                        <td>
+
+                        </td>
+									<td>
+
+									</td>
+                                    <td>
+                                        {# s time#}
+                                    </td>
+									<td>
+										{{ l.tgt_ip }}:{{ l.tgt_path }}
+									</td>
+                                    <td>
+                                        {{ l.tgt_script_path }}
+                                    </td>
+									<td></td>
+									<td></td>
+                                    <td></td>
+									<td>
+										<div>
+                                            <span class="span-link-slog"><a href="{% url 'ormlogs' RID=l.rid TYPE=1 %}">S端</a></span>
+                                            <span class="span-link-tlog"><a href="{% url 'ormlogs' RID=l.rid TYPE=2 %}">T端</a></span>
+                                        </div>
+									</td>
+									<td>
+                                        <i class="fa fa-cog"></i>
+{#										<a href="{% url 'ormoper' RID=l.rid %}">同步操作</a>#}
+                                    </td>
+								</tr>
+								<tr class="td-yc">
+									<td colspan="9">
+										<div>
+											<span style="font-size: 18px;">S</span>：
+                                            控制台进程数-<span id="span-dbps-num" class="span-info"></span>&nbsp;&nbsp;&nbsp;
+                                            分析进程数-<span id="span-vag-num" class="span-info"></span>&nbsp;&nbsp;&nbsp;
+                                            传送进程数-<span id="span-sender-num" class="span-info"></span>&nbsp;&nbsp;&nbsp;
+                                            分析进程报错-<span id="span-vag-err" class="span-info"></span>&nbsp;&nbsp;&nbsp;
+                                            传送进程报错-<span id="span-sender-err" class="span-info"></span>&nbsp;&nbsp;&nbsp;
+										</div>
+										<div>
+										</div>
+										<div>
+											<span style="font-size: 18px;">T</span>：
+                                            VAGENTD-<span id="span-vagnum" class="span-info"></span>&nbsp;|&nbsp;接收进程报错-<span id="span-vagnum-err" class="span-info"></span>&nbsp;|&nbsp;
+                                            装载进程-全量><span id="span-loader-s"  class="span-info"></span>&nbsp;|&nbsp;
+                                            装载进度-<span id="span-loader-rate"  class="span-info"></span>&nbsp;|&nbsp;
+                                            装载报错-<span id="span-loader-err"  class="span-info"></span>&nbsp;|&nbsp;
+                                            装载时间-<span id="span-loader-time"  class="span-info"></span>
+                                            <br/>
+										</div>
+									</td>
+								</tr>
+								<!--END 行记录-->
+                            {% endfor %}
+							</tbody>
+        </table>
+    </div>
+{% endblock %}

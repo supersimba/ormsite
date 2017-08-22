@@ -1,0 +1,112 @@
+.div-dbinfo{
+	border: 1px solid rgb(0,116,199);
+	padding-left: 15px;
+	background-color: rgb(43,41,39);
+	color: white;
+}
+.span-dbinfo-title{
+	color: white;
+	font-weight: 200;
+	font-size: 18px;
+	margin-right: 150px;
+}
+.span-dbinfo-path{
+	font-size: 8px;
+	color: white;
+}
+.span-dbinfo-ip{
+	font-size: 8px;
+	color: white;
+	margin-right: 80px;
+}
+.span-dbinfo-u .span-dbinfo-p{
+	display: none;
+}
+.div-logs-btn{
+	padding-left: 15px;
+	margin-top: 5px;margin-bottom: 5px;
+	font-size: 12px;
+}
+/*.btn-display-log{*/
+	/*border: 0px;*/
+/*}*/
+#div-display-log{
+	width: 100%;
+	border: 1px solid silver;
+	height: 500px;margin-bottom: 15px;
+}
+.btn-display-log{
+	border: none;
+	background-color: rgb(0,116,199);
+	color: white;
+    font-size: 12px;
+    height: 30px;
+}
+/*装载进程CSS  log.s*/
+.dropdown-logs-wrap{
+	display: inline-block;
+	position: relative;
+}
+.dropdown-logs-wrap a{
+	text-decoration: none;
+	display: block;
+	position: relative;
+	text-align: center;
+	color: white;
+	font-size: 15px;
+}
+.dropdown-logs-menu{
+	display: none;
+	z-index: 1000;
+	position: absolute;
+	width: 100%;
+	/*background-color: rgb(245,245,245);*/
+	background-color: rgb(0,116,199);
+}
+.dropdown-logs-wrap:hover .dropdown-logs-menu{
+	display: block;
+}
+.btn-dropdown-logs{
+	border: none;
+	background-color: rgb(0,116,199);
+	color: white;
+}
+/**/
+
+
+/*装载进程CSS  log.r*/
+.dropdown-logr-wrap{
+	display: inline-block;
+	position: relative;
+}
+.dropdown-logr-wrap a{
+	text-decoration: none;
+	display: block;
+	position: relative;
+	text-align: center;
+	font-size: 15px;
+	color: white;
+}
+.dropdown-logr-menu{
+	display: none;
+	z-index: 1000;
+	position: absolute;
+	width: 100%;
+	background-color: rgb(0,116,199);
+	/*color: white;*/
+}
+.dropdown-logr-wrap:hover .dropdown-logr-menu{
+	display: block;
+}
+.btn-dropdown-logr{
+	border: none;
+	background-color: rgb(0,116,199);
+	color: white;
+}
+/**/
+#div-display-log{
+	padding: 15px;font-size: 13px;
+	overflow-y: auto;
+}
+
+
