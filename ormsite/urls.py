@@ -21,5 +21,8 @@ urlpatterns = [
     url(r'^display_source_info/$',display_source_info),
     url(r'^display_target_info/$',display_target_info),
     #
-    url(r'^demo1',TemplateView.as_view(template_name='demo/extends1.html'),name='extends1'),
+    #执行 CHECK脚本函数
+    url(r'^check_process/$',check_process),
+    #显示 日志
+    url(r'^display_log/$',display_log),
 ]

@@ -7,6 +7,10 @@
     <link rel="stylesheet" href="/static/css/ormlogs.css" />
 {% endblock %}
 
+{% block ormlog-js %}
+    <script type="text/javascript" src="/static/js/ormlogs.js"></script>
+{% endblock %}
+
 {% block url-path %}
     <li>
         <a href="/ormindex/">首页</a>
@@ -21,8 +25,8 @@
 
 {% block content %}
     <div class="col-md-12">
+        {% if side_type == "1" %}
        <div class="div-dbinfo">
-           {% if side_type == "1" %}
            <span class="span-dbinfo-title">Source</span>
            IP:<span class="span-dbinfo-ip">{{ ip }}</span>
            目录:<span class="span-dbinfo-path">{{ path }}</span>

@@ -11,7 +11,7 @@ import paramiko
 
 from ormapp.models import *
 import libs.syncoper
-
+from libs.viewlog import *
 # Create your views here.
 
 # 解决json接受日期有问题
@@ -94,7 +94,6 @@ def display_replogs(req,RID,TYPE):
             'p':dbinfo.src_ssh_pwd
         })
     else:
-        print dbinfo.tgt_path
         return render_to_response('ormlogs.html', {
             'side_type': TYPE,
             'path': dbinfo.tgt_path,
@@ -211,7 +210,7 @@ def check_process(req):
                     result=result+l.replace('\n','<br />')
                 print result
         except Exception,e:
-            pass
+            print 'Exception----->%s' %e
         finally:
             return HttpResponse(result)
             sshcli.close()
